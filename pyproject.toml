@@ -1,0 +1,37 @@
+[project]
+name = "redis-iris-agent"
+version = "0.1.0"
+description = "A Pydantic AI agent that gives an LLM a context layer with Redis Iris: live data via Context Retriever (MCP) and memory via Agent Memory."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Cole Medin", email = "cole@dynamous.ai" }
+]
+keywords = ["pydantic-ai", "redis", "redis-iris", "mcp", "agent-memory", "context-retriever", "ai-agent"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "prompt-toolkit>=3.0.52",
+    "pydantic-ai-slim[anthropic,mcp,openai]>=2.2.0",
+    "python-dotenv>=1.2.2",
+    "redis>=8.0.1",
+    "redis-agent-memory>=0.1.1",
+    "redis-context-retriever>=0.0.5",
+    "rich>=15.0.0",
+]
+
+[project.urls]
+Repository = "https://github.com/coleam00/redis-iris-agent"
+
+[project.scripts]
+redis-iris-agent = "redis_iris_agent.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
